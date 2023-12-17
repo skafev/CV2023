@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title_CV }}</title>
+    <link type="image/x-icon" rel="shortcut icon" href="{% static 'img/cv.ico' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+<div class="general__area">
+    <div class="top__area">
+        <div class="bio__area">
+            <div class="photo__area"><img src="{% static 'img/S.kafev.jpg' %}" alt="{{ Name | safe }}"/></div>
+            <div class="info__area">
+                <p class="name">{{ Name }}</p>
+                <p class="profession">{{ Profession }}</p>
+                <p class="bio">{{ Bio }}</p>
+            </div>
+        </div>
+        <div class="personal__area">
+            <p class="country">{{ Country }}</p>
+            <div class="social__area">
+                {% for icon, url in Contact.items %}
+                        {% if 'email' in icon %}
+                            <a class='social' target='_blank' href="{{ url }}">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        {% elif 'phone' in icon %}
+                            <a class='social' target='_blank' href="{{ url }}">
+                                <i class="fas fa-phone-alt"></i>
+                            </a>
+                        {% else %}
+                            <a class='social' target='_blank' href="{{ url }}">
+                                <i class="fab fa-{{ icon }}"></i>
+                            </a>
+                        {% endif %}
+                {% endfor %}
+            </div>
+            <p class="birth__date">{{ Birthday }}</p>
+        </div>
+        <div class="exp__area">
+                <div class="exp__box">
+                <ol aria-label="Skills">
+                    {% for skill, percent in Skills.items %}
+                        <li><span class='main'>{{ skill }}</span><span class='percent'>{{ percent }}</span></li>
+                    {% endfor %}
+                </ol>
+                </div>
+                <div class="exp__box">
+                    <ol aria-label="Hobbies">
+                        {% for hobie in Hobbies %}
+                            <li>{{ hobie }}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div class="exp__box">
+                    <ol aria-label="Certificates">
+                        {% for certificate in Certificates %}
+                            <li>{{ certificate }}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+        </div>
+    </div>
+    <div class="mid__area">
+        <div class="status__area">
+                <div class="education__area">
+                    <ol aria-label="Education">
+                        {% for school, year in Education.items %}
+                            <li><span class='main'>{{ school }}</span><span class='year'>{{ year }}</span></li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div class="work__area">
+                    <ol aria-label="Work">
+                        {% for company, year in Work.items %}
+                            <li><span class='main'>{{ company }}</span><span class='year'>{{ year }}</span></li>
+                        {% endfor %}
+                    </ol>
+                </div>
+        </div>
+    </div>
+    <div class="bottom__area">
+            <div class="project__area">
+                <ol aria-label="Projects">
+                    {% for project in Projects %}
+                        <li>{{ project }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'js/vanilla-tilt.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
+</body>
+
+</html>
