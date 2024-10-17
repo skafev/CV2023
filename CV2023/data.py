@@ -20,7 +20,7 @@ class CVinfo:
     @staticmethod
     def _get_bio():
         msg = """
-            Working in the IT industry with already 2y of experience and counting.
+            Working in the IT industry with already 3y of experience and counting.
             Throughout my career I have honed my skills in Python, Django and Linux.
             In my journey, I am eager to push myself to understand where my limits are 
             and also to learn new stuff so i can expand my knowledge.
@@ -83,7 +83,7 @@ class CVinfo:
     def _get_work_experience():
         return {
             'Strypes': 'June 2022 - Present',
-            'Bulgarian custom inspector': '2019- June 2022'
+            'Bulgarian customs inspector': '2019- June 2022'
         }
 
     @staticmethod
