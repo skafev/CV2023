@@ -67,10 +67,10 @@ class CVinfo:
             'MNKnowledge course',
             'Linux systems  administration',
             'Compromising platforms',
-            'Complete Python Pro Bootcamp',
-            'Python programming Masterclass',
+            'Complete Python Deep-Dive udemy course',
             'C++ internal Strypes course',
-            'ASML internal courses'
+            'ASML internal courses',
+            'DevOps internal Strypes academy'
         ]
 
     @staticmethod
